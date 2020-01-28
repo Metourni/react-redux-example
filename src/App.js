@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Provider} from 'react-redux';
+
+import store from "./redux/store";
+
 import './App.css';
+import CakePage from "./pages/CakesPage";
+import HooksCakePage from "./pages/HooksCakePage";
+import SandwichPage from "./pages/SandwichPage";
+import ServerDataPage from "./pages/ServerDataPage";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <ServerDataPage/>
+            <SandwichPage/>
+            <HooksCakePage/>
+            <CakePage/>
+        </Provider>
+    );
 }
+
 
 export default App;
